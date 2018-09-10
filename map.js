@@ -245,3 +245,4 @@ const finalPrices = shoppingList.map(item => {
 
 
 
+
