@@ -73,4 +73,62 @@
           sayName: () => console.log(this.name); // prints an empty string, because the Window has no property called name
         }
 
+  Anonymous Functions:
+    Functions that don't have a name.
+    Function expressions will typically be anonymous
+    ALL ES6 functions/Fat arrow functions are anonymous
+
+    Some benefits:
+      Easier to read
+      Less Code
+      Don't have to think of names
+      No chance of having an error on redefining a function name
+    Downsides:
+      Harder to debug because it doesn't give you a name
+      No self-referencing
+
+    
+    Example:
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.status === 200){
+          alert(xhr.responseText);
+        }
+      }
+      xhr.onreadystatechange = () => {
+        if(xhr.readyState === 4 && xhr.status === 200){
+          alert(xhr.responseText);
+        }
+      }
+
+    const header = document.querySelector('header');
+    header.addEventListener('mouseover', () => {
+      header.style.backgroundColor = '#ffffff';
+    })
+    header.addEventListener('onmouseout', () => {
+      header.style.backgroundColor = '#000000';
+    })
+
+
+    function greetUser(hombre){
+      return `Hola ${hombre}`;
+    }
+    console.log(greetUser('Jeff'));
+
+    // Converted to expression with anonymous function
+    const greetUser = function(hombre){
+      return `Hola ${hombre}`;
+    }
+    console.log(greetUser('Jeff'));
+
+    // Converted to ES6/arrow function
+    const greetUser = (hombre) => {
+      return `Hola ${hombre}`;
+    }
+    console.log(greetUser('Jeff'));
+
+    // More concise version with implicit return
+    const greetUser = hombre => `Hola ${hombre}`;
+    
+    console.log(greetUser('Jeff'));
+
 */
