@@ -35,6 +35,7 @@ const verbs = ['Read', 'Buy', 'Sell', 'Print', 'Publish'];
 const nouns = ['Newspaper', 'Magazine', 'Book', 'Catalog', 'Manual'];
 
 // makeRandomPairs
+
 /*
   For each item in the verbs array, match it with a random item in the nouns array and add it to the result array.
   Return the result array at the end
