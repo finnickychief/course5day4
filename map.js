@@ -98,6 +98,7 @@ console.log(layEggs(birds));
     1: Current item in the array
     2: The index that the current item occurs at
     3: The entire array that called map
+
   Execution block
 
   Create a new array that says if the item is even or odd
@@ -171,8 +172,6 @@ console.log(layEggs(birds));
 
 
 
-
-
   // Make each item the sum of its 2 neighbors
   [1,2,3,4,5]
   [2,4,6,8,4]
@@ -183,3 +182,66 @@ console.log(layEggs(birds));
   
 
 */
+
+const birds = ['Robin', 'Oriole', 'Bluejay', 'Seagull', 'Eagle'];
+
+//function layEggs(arr)
+//const layEggs = function(arr)
+const layEggs = arr => {
+  let eggsArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    eggsArr.push(arr[i] + ' Eggs');
+  }
+  return eggsArr[];
+};
+
+const eggsArray = birds.map((item) => {
+  return item + ' Eggs'
+}); // Same as next line
+const eggsArray = birds.map(bird => bird + ' Eggs');
+
+console.log(layEggs(birds));
+
+
+// jellyBeans
+const fruits = ['Apple', 'Banana', 'Mango', 'Orange', 'Peach', 'Pear', 'Plum'];
+
+const jellybeans = [];
+for(let i = 0; i < fruits.length; i++){
+  jellybeans.push(fruits[i] + ' Jellybean');
+}
+console.log(jellybeans);
+
+let mappedJellybeans = fruits.map((fruit) => {
+  return fruit + ' Jellybean';
+})
+
+let mappedJellybeans = fruits.map(fruit => `${fruit} Jellybean`);
+
+let objectFruits = fruits.map(fruit => {return {name: fruit}})
+
+
+const furniture = ['Desk', 'Chair', 'Bed', 'Table', 'Sofa', 'Card Table', 'Tea Table', 'Chest', 'Dresser'];
+const wood = ['Oak', 'Walnut', 'Mahogany', 'Maple'];
+
+// Make something out of each piece of furniture, with the wood type randomized
+const woodFurniture = furniture.map(item => {
+  let random = Math.floor(Math.random()*wood.length);
+  return wood[random] + " " + item;
+});
+
+
+const fibos = [1,1,2,3,5,8,13,21,34,55,89,144];
+// const fibosqs = fibos.map(e => e**2);
+const fibosqs = fibos.map(e => e * e);
+
+
+const shoppingList = [20.21, 5.78, 10.31];
+const taxRate = 0.08;
+
+const finalPrices = shoppingList.map(item => {
+  return Number((item + item*taxRate).toFixed(2))
+});
+
+
+
