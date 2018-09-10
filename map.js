@@ -43,3 +43,143 @@ function bakePies(arr) {
 }
 const myPies = bakePies(pFood);
 console.log(myPies);
+
+// Function expression version:
+const fruits2 = ['Apple', 'Blueberry', 'Cherry'];
+
+const pies = function(arr) {
+  const piesArr = [];
+  let pie = '';
+
+  // Map ' Pie' to the end of every item
+  for (let i = 0; i < arr.length; i++) {
+    pie = arr[i] + ' Pie';
+    piesArr.push(pie);
+  }
+
+  return piesArr;
+};
+console.log(pies(fruits2));
+
+// Fat arrow: First function declaration, then function expression, then arrow function
+const birds = ['Robin', 'Oriole', 'Bluejay', 'Seagull', 'Eagle'];
+
+//function layEggs(arr)
+//const layEggs = function(arr)
+const layEggs = arr => {
+  const eggsArr = [];
+  let egg = '';
+
+  for (let i = 0; i < arr.length; i++) {
+    egg = arr[i] + ' Eggs';
+    eggsArr.push(egg);
+  }
+  return eggsArr;
+};
+console.log(layEggs(birds));
+
+// Map (and array functions)
+/*
+  Each of the primary array methods that loop over every item(forEach, map, filter, reduce) use the same structure for their callback
+
+  Callback: When you pass in a function as a parameter
+  This function is called based on an event or on every item in a collection such as an array
+
+  Examples have been with addEventListener, where when the event type happens the function you passed in is called
+
+  Structure of array methods:
+  const numAry = [1,2,3,4,5];
+
+  Map returns a new array, not the original array modified
+  const mappedAry = numAry.map(callback);
+
+  Callback structure:
+  Parameter list - For array methods, this is 1-3 parameters. The first is required, the other 2 are optional. The order matters.
+    1: Current item in the array
+    2: The index that the current item occurs at
+    3: The entire array that called map
+  Execution block
+
+  Create a new array that says if the item is even or odd
+  const resultArray = numAry.map((item, index) => {
+    if(item % 2 === 0){
+      console.log(`${item} at ${index} is even`)
+      return 'even'
+    } else{
+      console.log(`${item} at ${index} is odd`)
+      return 'odd';
+    }
+  })
+
+  const shortResult = numAry.map(item => 
+    item % 2 === 0 ? 'even' : 'odd'
+  );
+
+  const shortResult2 = numAry.map(item => 
+    item % 2 ? 'odd' : 'even'
+  );
+
+
+  
+  const shiftedAry = numAry.map((item, index, array) => {
+    array[index] = array[index+1];
+    console.log(array);
+    return item;
+  })
+
+  let newAry = [];
+  for(let i = 0; i < numAry.length; i++){
+    let item = numAry[i]; // Store current item
+    numAry[i] = numAry[i+1]; // Set current item to be the next item
+    console.log(numAry); // Log the entire array
+    newAry.push(item); // Add current item to the new array
+  }
+
+
+  [1,2,3,4,5]
+  []
+  Index 0:
+  [2,2,3,4,5]
+  [1]
+  Index 1:
+  [2,3,3,4,5]
+  [1,2]
+  Index 2:
+  [2,3,4,4,5]
+  [1,2,3]
+  Index 3:
+  [2,3,4,5,5]
+  [1,2,3,4]
+  Index 4:
+  [2,3,4,5,undefined]
+  [1,2,3,4,5]
+
+
+
+  // Use external function
+  let callbackFunction = (item, index, array) => {
+    array[index] = array[index+1];
+    console.log(array);
+    return item;
+  }
+
+  const shiftedAry2 = numAry.map(callbackFunction);
+
+
+
+
+
+
+
+
+
+  // Make each item the sum of its 2 neighbors
+  [1,2,3,4,5]
+  [2,4,6,8,4]
+
+
+
+
+  
+
+*/
